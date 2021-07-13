@@ -1,13 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from "react-native";
 // import { FaBeer } from "react-icons/fa";
 
 export default function App() {
   const [text, onChangeText] = React.useState(null);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.sectionHeader}>
         <Text style={styles.headerContent}>My Coupons</Text>
       </View>
@@ -35,7 +35,7 @@ export default function App() {
         </View>
       </TouchableOpacity>
       <Text style={{ marginTop: 60 }}>You have no coupons left</Text>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECECEC",
     padding: 40,
-    alignItems: "center",
+    // alignItems: "center",
   },
 
   sectionHeader: {
