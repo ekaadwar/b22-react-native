@@ -6,104 +6,158 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={styles.sectionCard}>
-          <View style={styles.imgDetail} />
-          <Text style={styles.cardHeader}>Cold Brew</Text>
-          <Text style={styles.cardBody}>Delivery only on Monday to friday at 1 - 7 pm</Text>
+      <View style={styles.sectionHeader}>
+        <Text style={styles.headerContent}>Cart</Text>
+      </View>
+      <View style={styles.sectionContent}>
+        <Text>swipe on an item to delete</Text>
+        <View style={styles.card}>
+          <View style={styles.cardImg}></View>
+          <View style={styles.cardContent}>
+            <Text style={styles.cardHead}>Veggie tomato mix</Text>
+            <View style={styles.cardPay}>
+              <Text style={styles.cardPrice}>IDR 30.000</Text>
+              <View style={styles.cardAmount}>
+                <TouchableOpacity>
+                  <Text style={styles.contentAmount}>-</Text>
+                </TouchableOpacity>
+                <Text style={styles.contentAmount}>99</Text>
+                <TouchableOpacity>
+                  <Text style={styles.contentAmount}>+</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={styles.card}>
+          <View style={styles.cardImg}></View>
+          <View style={styles.cardContent}>
+            <Text style={styles.cardHead}>Veggie tomato mix</Text>
+            <View style={styles.cardPay}>
+              <Text style={styles.cardPrice}>IDR 30.000</Text>
+              <View style={styles.cardAmount}>
+                <TouchableOpacity>
+                  <Text style={styles.contentAmount}>-</Text>
+                </TouchableOpacity>
+                <Text style={styles.contentAmount}>99</Text>
+                <TouchableOpacity>
+                  <Text style={styles.contentAmount}>+</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={styles.card}>
+          <View style={styles.cardImg}></View>
+          <View style={styles.cardContent}>
+            <Text style={styles.cardHead}>Veggie tomato mix</Text>
+            <View style={styles.cardPay}>
+              <Text style={styles.cardPrice}>IDR 30.000</Text>
+              <View style={styles.cardAmount}>
+                <TouchableOpacity>
+                  <Text style={styles.contentAmount}>-</Text>
+                </TouchableOpacity>
+                <Text style={styles.contentAmount}>99</Text>
+                <TouchableOpacity>
+                  <Text style={styles.contentAmount}>+</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
         </View>
       </View>
-
-      <View style={styles.sectionBody}>
-        <Text style={styles.bodyContent}>
-          Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours.
-        </Text>
-      </View>
-
-      <View style={styles.sectionCart}>
-        <Text style={styles.price}>IDR 30.0</Text>
-        <TouchableOpacity style={styles.buttonCart}>
-          {/* <Text>
-            <FaBeer />
-          </Text> */}
+      <View>
+        <TouchableOpacity style={styles.buttonBrow}>
+          <Text style={styles.textLightLg}>Confirn and Checkout</Text>
         </TouchableOpacity>
       </View>
-      <StatusBar style="auto" />
     </View>
   );
 }
 
-const radius = 170;
-const radiusButton = 45;
+const radiCardImg = 70;
+const amountX = 75;
+const amountY = 30;
+const primaryButtonY = 50;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#362115",
-    paddingLeft: 40,
-    paddingBottom: 40,
+    backgroundColor: "#ECECEC",
+    padding: 40,
   },
-
-  imgDetail: {
-    height: radius,
-    width: radius,
-    borderRadius: radius / 2,
-    backgroundColor: "gray",
-  },
-
-  sectionCard: {
-    // justifyContent: "center",
-    paddingTop: 140,
-    backgroundColor: "#FFBA33",
-    width: 275,
-    height: 450,
-    borderBottomLeftRadius: 20,
+  sectionHeader: {
     alignItems: "center",
   },
-
-  cardContainer: {
-    alignItems: "flex-end",
-  },
-
-  cardHeader: {
+  headerContent: {
+    fontSize: 20,
     fontWeight: "bold",
-    fontSize: 30,
-    marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 55,
   },
-
-  cardBody: {
-    width: 150,
-    textAlign: "center",
-  },
-
-  sectionBody: {
+  sectionContent: {
+    alignItems: "center",
     flex: 1,
-    justifyContent: "center",
+  },
+  card: {
+    backgroundColor: "#fff",
+    padding: 12,
+    borderRadius: 20,
+    width: "100%",
+    flexDirection: "row",
+    marginTop: 20,
+  },
+  cardImg: {
+    backgroundColor: "#aaa",
+    width: radiCardImg,
+    height: radiCardImg,
+    borderRadius: radiCardImg / 2,
+    marginRight: 12,
   },
 
-  bodyContent: {
-    color: "#fff",
-    fontWeight: "bold",
-    width: 250,
+  cardContent: {
+    justifyContent: "space-between",
+    // backgroundColor: "coral",
+    flex: 1,
   },
 
-  sectionCart: {
+  cardPay: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingRight: 40,
+    // backgroundColor: "pink",
   },
 
-  price: {
+  cardHead: {
+    fontSize: 18,
+  },
+  cardPrice: {
+    color: "#895537",
+    fontSize: 15,
+  },
+  cardAmount: {
+    backgroundColor: "#6A4029",
+    width: amountX,
+    height: amountY,
+    borderRadius: amountY / 2,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10,
+  },
+  contentAmount: {
     color: "#fff",
-    fontSize: 30,
     fontWeight: "bold",
+    fontSize: 15,
   },
-
-  buttonCart: {
-    height: radiusButton,
-    width: radiusButton,
-    borderRadius: radiusButton / 2,
-    backgroundColor: "#EBEBEB",
+  buttonBrow: {
+    backgroundColor: "#6A4029",
+    alignItems: "center",
+    justifyContent: "center",
+    height: primaryButtonY,
+    borderRadius: primaryButtonY / 5,
+  },
+  textLightLg: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 15,
   },
 });
