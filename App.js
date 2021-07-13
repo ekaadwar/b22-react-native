@@ -7,77 +7,57 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.sectionHeader}>
-        <Text style={styles.headerContent}>Cart</Text>
+        <Text style={styles.headerContent}>Checkout</Text>
       </View>
       <View style={styles.sectionContent}>
-        <Text>swipe on an item to delete</Text>
-        <View style={styles.card}>
-          <View style={styles.cardImg}></View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardHead}>Veggie tomato mix</Text>
-            <View style={styles.cardPay}>
-              <Text style={styles.cardPrice}>IDR 30.000</Text>
-              <View style={styles.cardAmount}>
-                <TouchableOpacity>
-                  <Text style={styles.contentAmount}>-</Text>
-                </TouchableOpacity>
-                <Text style={styles.contentAmount}>99</Text>
-                <TouchableOpacity>
-                  <Text style={styles.contentAmount}>+</Text>
-                </TouchableOpacity>
-              </View>
+        <Text style={styles.tittle}>Delivery</Text>
+        <View style={styles.subSection}>
+          <View style={styles.subHeader}>
+            <Text style={{ fontWeight: "bold" }}>Address details</Text>
+            <TouchableOpacity>
+              <Text style={{ color: "#6A4029" }}>change</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.card}>
+            <View style={styles.cardSection}>
+              <Text style={{ fontSize: 17 }}>Iskandar Street</Text>
             </View>
+            <View style={styles.cardSection}>
+              <Text>Km 5 refinery road oppsite re public road, effurun, Jakarta</Text>
+            </View>
+            <Text>+62 81348287878</Text>
           </View>
         </View>
-        <View style={styles.card}>
-          <View style={styles.cardImg}></View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardHead}>Veggie tomato mix</Text>
-            <View style={styles.cardPay}>
-              <Text style={styles.cardPrice}>IDR 30.000</Text>
-              <View style={styles.cardAmount}>
-                <TouchableOpacity>
-                  <Text style={styles.contentAmount}>-</Text>
-                </TouchableOpacity>
-                <Text style={styles.contentAmount}>99</Text>
-                <TouchableOpacity>
-                  <Text style={styles.contentAmount}>+</Text>
-                </TouchableOpacity>
-              </View>
+        <View style={styles.subSection}>
+          <View style={styles.subHeader}>
+            <Text style={{ fontWeight: "bold" }}>Delivery Method</Text>
+          </View>
+          <View style={styles.card}>
+            <View style={styles.cardSection}>
+              <Text>Door Delivery</Text>
             </View>
+            <View style={styles.cardSection}>
+              <Text>Pick up at store</Text>
+            </View>
+            <Text>Dine in</Text>
           </View>
         </View>
-        <View style={styles.card}>
-          <View style={styles.cardImg}></View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardHead}>Veggie tomato mix</Text>
-            <View style={styles.cardPay}>
-              <Text style={styles.cardPrice}>IDR 30.000</Text>
-              <View style={styles.cardAmount}>
-                <TouchableOpacity>
-                  <Text style={styles.contentAmount}>-</Text>
-                </TouchableOpacity>
-                <Text style={styles.contentAmount}>99</Text>
-                <TouchableOpacity>
-                  <Text style={styles.contentAmount}>+</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
+        <View style={styles.subSection}>
+          <View style={styles.sectionTotal}>
+            <Text>Total</Text>
+            <Text style={styles.totalPrice}>IDR 123.000</Text>
           </View>
         </View>
       </View>
       <View>
         <TouchableOpacity style={styles.buttonBrow}>
-          <Text style={styles.textLightLg}>Confirn and Checkout</Text>
+          <Text style={styles.textLightLg}>Proceed to payment</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-const radiCardImg = 70;
-const amountX = 75;
-const amountY = 30;
 const primaryButtonY = 50;
 
 const styles = StyleSheet.create({
@@ -86,68 +66,64 @@ const styles = StyleSheet.create({
     backgroundColor: "#ECECEC",
     padding: 40,
   },
+
   sectionHeader: {
     alignItems: "center",
   },
+
   headerContent: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 55,
   },
+
   sectionContent: {
     alignItems: "center",
     flex: 1,
   },
+
+  tittle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    alignSelf: "flex-start",
+  },
+
+  subHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+
+  subSection: {
+    width: "100%",
+    marginTop: 20,
+  },
+
+  cardSection: {
+    borderBottomColor: "#000",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingVertical: 5,
+    marginBottom: 5,
+  },
+
   card: {
     backgroundColor: "#fff",
     padding: 12,
     borderRadius: 20,
     width: "100%",
-    flexDirection: "row",
-    marginTop: 20,
-  },
-  cardImg: {
-    backgroundColor: "#aaa",
-    width: radiCardImg,
-    height: radiCardImg,
-    borderRadius: radiCardImg / 2,
-    marginRight: 12,
   },
 
-  cardContent: {
-    justifyContent: "space-between",
-    // backgroundColor: "coral",
-    flex: 1,
-  },
-
-  cardPay: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    // backgroundColor: "pink",
-  },
-
-  cardHead: {
-    fontSize: 18,
-  },
-  cardPrice: {
-    color: "#895537",
-    fontSize: 15,
-  },
-  cardAmount: {
-    backgroundColor: "#6A4029",
-    width: amountX,
-    height: amountY,
-    borderRadius: amountY / 2,
+  sectionTotal: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 10,
   },
-  contentAmount: {
-    color: "#fff",
+
+  totalPrice: {
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 20,
   },
+
   buttonBrow: {
     backgroundColor: "#6A4029",
     alignItems: "center",
