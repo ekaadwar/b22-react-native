@@ -13,21 +13,21 @@ export default function App() {
       </View>
       <TextInput style={styles.searcing} onChangeText={onChangeText} placeholder="Browse coupons" value={text} />
       <Text style={{ marginTop: 20 }}>Claim coupons by clicking it</Text>
-      <TouchableOpacity style={styles.cardYellow}>
+      <TouchableOpacity style={[styles.card, { backgroundColor: "#F5C361" }]}>
         <View style={styles.cardImg} />
         <View style={styles.cardContent}>
           <Text style={{ fontWeight: "bold" }}>Get a cup of coffee for free on sunday morning</Text>
           <Text>Only at 7 to 9 AM</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.cardGreen}>
+      <TouchableOpacity style={[styles.card, { backgroundColor: "#88B788" }]}>
         <View style={styles.cardImg} />
         <View style={styles.cardContent}>
           <Text style={{ fontWeight: "bold" }}>HAPPY MOTHER’S DAY!</Text>
           <Text>Get one of our favorite menu for free!</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.cardRed}>
+      <TouchableOpacity style={[styles.card, { backgroundColor: "#C59378" }]}>
         <View style={styles.cardImg} />
         <View style={styles.cardContent}>
           <Text style={{ fontWeight: "bold" }}>HAPPY HALLOWEEN!</Text>
@@ -67,31 +67,8 @@ const styles = StyleSheet.create({
     marginBottom: 55,
   },
 
-  cardYellow: {
+  card: {
     marginTop: 20,
-    backgroundColor: "#F5C361",
-    padding: 12,
-    borderRadius: 20,
-    width: "100%",
-    height: 100,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  cardGreen: {
-    marginTop: 20,
-    backgroundColor: "#88B788",
-    padding: 12,
-    borderRadius: 20,
-    width: "100%",
-    height: 100,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  cardRed: {
-    marginTop: 20,
-    backgroundColor: "#C59378",
     padding: 12,
     borderRadius: 20,
     width: "100%",
