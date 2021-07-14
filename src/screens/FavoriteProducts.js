@@ -10,7 +10,7 @@ import {
 export default class FavoriteProducts extends Component {
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={[styles.container, { marginTop: 80 }]}>
         <View style={styles.section}>
           <View>
             <Text style={styles.sectionHeader}>Coffee</Text>

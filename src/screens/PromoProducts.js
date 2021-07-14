@@ -11,7 +11,7 @@ import {
 export default class PromoProducts extends Component {
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={[styles.container, { marginTop: 80 }]}>
         <View>
           <Text style={styles.sectionHeader}>Stay Hungry!</Text>
           <Text style={{ textAlign: "center" }}>

@@ -121,12 +121,20 @@ export default class App extends Component {
           <Stack.Screen
             component={FavoriteProducts}
             name="favoriteProducts"
-            options={{ title: "Favorite Products" }}
+            options={{
+              title: "Favorite Products",
+              header: Header,
+              headerTransparent: true,
+            }}
           />
           <Stack.Screen
             component={PromoProducts}
             name="promoProducts"
-            options={{ title: "Promo for you" }}
+            options={{
+              title: "Promo for you",
+              header: Header,
+              headerTransparent: true,
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
