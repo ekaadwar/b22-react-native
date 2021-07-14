@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  ScrollView,
-  Text,
-  View,
-  StyleSheet,
-  RecyclerViewBackedScrollViewComponent,
-} from "react-native";
+import { ScrollView, Text, View, StyleSheet } from "react-native";
 
 export default class FavoriteProducts extends Component {
   render() {

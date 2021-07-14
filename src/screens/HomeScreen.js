@@ -43,7 +43,12 @@ export default class HomeScreen extends Component {
           <View style={styles.container}>
             <Text style={styles.sectionHeader}>Promo to you</Text>
             <TouchableOpacity>
-              <Text style={styles.more}>See More</Text>
+              <Text
+                onPress={() => this.props.navigation.navigate("promoProducts")}
+                style={styles.more}
+              >
+                See More
+              </Text>
             </TouchableOpacity>
           </View>
           <ScrollView horizontal>
