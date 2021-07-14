@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import Icon from "react-native-vector-icons/FontAwesome";
+
 export default class HomeScreen extends Component {
   render() {
     return (
@@ -30,9 +32,11 @@ export default class HomeScreen extends Component {
                 style={styles.productCard}
                 key={String(idx)}
               >
-                <View style={styles.cardImage}></View>
+                <View style={styles.cardImage}>
+                  <Icon name="user-circle" size={40} color="yellow" />
+                </View>
                 <View style={styles.productText}>
-                  <Text style={styles.productName}>Hazelnut Latte</Text>
+                  <Text style={styles.productName}>Donat Madu</Text>
                   <Text style={styles.productPrice}>IDR 25.000</Text>
                 </View>
               </TouchableOpacity>
@@ -120,6 +124,8 @@ const styles = StyleSheet.create({
     width: 160,
     borderRadius: 20,
     marginTop: -30,
+    alignItems: "center",
+    justifyContent: "center",
     // paddingBottom: 50
   },
 

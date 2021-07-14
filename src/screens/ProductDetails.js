@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-// import { FaBeer } from "react-icons/fa";
+import IconFeather from "react-native-vector-icons/Feather";
 
 export default function ProductDetails() {
   return (
@@ -10,22 +10,24 @@ export default function ProductDetails() {
         <View style={styles.sectionCard}>
           <View style={styles.imgDetail} />
           <Text style={styles.cardHeader}>Cold Brew</Text>
-          <Text style={styles.cardBody}>Delivery only on Monday to friday at 1 - 7 pm</Text>
+          <Text style={styles.cardBody}>
+            Delivery only on Monday to friday at 1 - 7 pm
+          </Text>
         </View>
       </View>
 
       <View style={styles.sectionBody}>
         <Text style={styles.bodyContent}>
-          Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours.
+          Cold brewing is a method of brewing that combines ground coffee and
+          cool water and uses time instead of heat to extract the flavor. It is
+          brewed in small batches and steeped for as long as 48 hours.
         </Text>
       </View>
 
       <View style={styles.sectionCart}>
         <Text style={styles.price}>IDR 30.0</Text>
         <TouchableOpacity style={styles.buttonCart}>
-          {/* <Text>
-            <FaBeer />
-          </Text> */}
+          <IconFeather name="shopping-cart" size={20} color="#362115" />
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
@@ -105,5 +107,7 @@ const styles = StyleSheet.create({
     width: radiusButton,
     borderRadius: radiusButton / 2,
     backgroundColor: "#EBEBEB",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
