@@ -5,10 +5,10 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function Cart() {
   return (
-    <View style={styles.container}>
-      <View style={styles.sectionHeader}>
+    <View style={[styles.container, { marginTop: 80 }]}>
+      {/* <View style={styles.sectionHeader}>
         <Text style={styles.headerContent}>Cart</Text>
-      </View>
+      </View> */}
       <View style={styles.sectionContent}>
         <Text>swipe on an item to delete</Text>
         <View style={styles.card}>
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ECECEC",
+    // backgroundColor: "coral",
     padding: 40,
   },
   sectionHeader: {
