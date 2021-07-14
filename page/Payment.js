@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from "react-native";
 // import { FaBeer } from "react-icons/fa";
 
-export default function App() {
+export default function Payment() {
   const [text, onChangeText] = React.useState(null);
 
   return (

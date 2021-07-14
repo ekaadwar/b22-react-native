@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 // import { FaBeer } from "react-icons/fa";
 
-export default function App() {
+export default function ProductDetails() {
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
