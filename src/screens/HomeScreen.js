@@ -1,22 +1,66 @@
 import React, { Component } from "react";
-import { ScrollView, Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
 export default class HomeScreen extends Component {
   render() {
     return (
-      <View>
-        <ScrollView horizontal>
-          {[...Array(20)].map((_i, idx) => (
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("productDetails")} style={styles.productCard} key={String(idx)}>
-              <View style={styles.cardImage}></View>
-              <View style={styles.productText}>
-                <Text style={styles.productName}>Hazelnut Latte</Text>
-                <Text style={styles.productPrice}>IDR 25.000</Text>
-              </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.titleScreen}>A good coffee is a good day</Text>
+        </View>
+        <View style={styles.sectionScreen}>
+          <View style={styles.container}>
+            <Text style={styles.sectionHeader}>Favorite Products</Text>
+            <TouchableOpacity>
+              <Text style={styles.more}>See More</Text>
             </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
+          </View>
+          <ScrollView horizontal>
+            {[...Array(20)].map((_i, idx) => (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("productDetails")}
+                style={styles.productCard}
+                key={String(idx)}
+              >
+                <View style={styles.cardImage}></View>
+                <View style={styles.productText}>
+                  <Text style={styles.productName}>Hazelnut Latte</Text>
+                  <Text style={styles.productPrice}>IDR 25.000</Text>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+        <View style={styles.sectionScreen}>
+          <View style={styles.container}>
+            <Text style={styles.sectionHeader}>Promo to you</Text>
+            <TouchableOpacity>
+              <Text style={styles.more}>See More</Text>
+            </TouchableOpacity>
+          </View>
+          <ScrollView horizontal>
+            {[...Array(20)].map((_i, idx) => (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("productDetails")}
+                style={styles.productCard}
+                key={String(idx)}
+              >
+                <View style={styles.cardImage}></View>
+                <View style={styles.productText}>
+                  <Text style={styles.productName}>Hazelnut Latte</Text>
+                  <Text style={styles.productPrice}>IDR 25.000</Text>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -26,12 +70,38 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2F2F2",
   },
 
+  container: {
+    paddingHorizontal: 40,
+  },
+
+  titleScreen: {
+    fontSize: 25,
+    fontWeight: "bold",
+    width: "70%",
+    marginVertical: 20,
+  },
+
+  sectionScreen: {
+    marginVertical: 15,
+  },
+
+  sectionHeader: {
+    fontWeight: "bold",
+    fontSize: 18,
+    color: "#6A4029",
+  },
+
+  more: {
+    color: "#6A4029",
+    alignSelf: "flex-end",
+  },
+
   productCard: {
     backgroundColor: "#fff",
     height: 260,
     width: 220,
     borderRadius: 30,
-    marginTop: 70,
+    marginTop: 50,
     margin: 20,
     elevation: 5,
     alignItems: "center",
