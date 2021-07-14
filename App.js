@@ -1,12 +1,13 @@
 import "react-native-gesture-handler";
 
-// import { StatusBar } from "expo-status-bar";
-import React, { Component } from "react";
-import { Text, View } from "react-native";
-// import { FaBeer } from "react-icons/fa";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+
+import React, { Component } from "react";
+import { Text, View } from "react-native";
+
+import HomeScreen from "./src/screens/HomeScreen";
+import ProductDetails from "./src/screens/ProductDetails";
 
 const Stack = createStackNavigator();
 
@@ -14,7 +15,10 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Text>Hello World!!!</Text>
+        <Stack.Navigator>
+          <Stack.Screen component={HomeScreen} name="home" options={{ title: "Dashboard" }} />
+          <Stack.Screen component={ProductDetails} name="productDetails" />
+        </Stack.Navigator>
       </NavigationContainer>
     );
   }
