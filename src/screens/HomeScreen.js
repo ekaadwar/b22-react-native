@@ -17,14 +17,16 @@ export default class HomeScreen extends Component {
         <View style={styles.sectionScreen}>
           <View style={styles.container}>
             <Text style={styles.sectionHeader}>Favorite Products</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("favoriteProducts")}
+            >
               <Text style={styles.more}>See More</Text>
             </TouchableOpacity>
           </View>
           <ScrollView horizontal>
             {[...Array(20)].map((_i, idx) => (
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("productDetails")}
+                onPress={() => this.props.navigation.navigate("details")}
                 style={styles.productCard}
                 key={String(idx)}
               >

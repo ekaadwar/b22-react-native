@@ -3,6 +3,10 @@ import { ScrollView, Text, View, StyleSheet } from "react-native";
 
 export default class FavoriteProducts extends Component {
   render() {
-    return <ScrollView>Ini FavoriteProduct Screen</ScrollView>;
+    return (
+      <ScrollView>
+        <Text>Ini FavoriteProduct Screen</Text>
+      </ScrollView>
+    );
   }
 }

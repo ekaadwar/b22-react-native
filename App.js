@@ -22,7 +22,7 @@ export default class App extends Component {
             name="home"
             options={{ title: "Dashboard" }}
           />
-          <Stack.Screen component={ProductDetails} name="Details" />
+          <Stack.Screen component={ProductDetails} name="details" />
           <Stack.Screen
             component={FavoriteProducts}
             name="favoriteProducts"
