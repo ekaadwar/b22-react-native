@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { ScrollView, Text, View, StyleSheet } from "react-native";
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
 export default class FavoriteProducts extends Component {
   render() {
@@ -10,38 +16,30 @@ export default class FavoriteProducts extends Component {
             <Text style={styles.sectionHeader}>Coffee</Text>
           </View>
           <View>
-            <View style={styles.sectionCard}>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Kopi Tanpa Gula</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
+            {[...Array(2)].map((_i, idx) => (
+              <View style={styles.sectionCard}>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("details")}
+                  style={styles.card}
+                >
+                  <View style={styles.cardImage} />
+                  <View style={styles.cardText}>
+                    <Text style={styles.productName}>Kopi Tanpa Gula</Text>
+                    <Text style={styles.productPrice}>IDR 27.000</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("details")}
+                  style={styles.card}
+                >
+                  <View style={styles.cardImage} />
+                  <View style={styles.cardText}>
+                    <Text style={styles.productName}>Kopi Tanpa Gula</Text>
+                    <Text style={styles.productPrice}>IDR 27.000</Text>
+                  </View>
+                </TouchableOpacity>
               </View>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Kopi Tanpa Gula</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.sectionCard}>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Kopi Tanpa Gula</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
-              </View>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Kopi Tanpa Gula</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
-              </View>
-            </View>
+            ))}
           </View>
         </View>
         <View style={styles.section}>
@@ -49,38 +47,30 @@ export default class FavoriteProducts extends Component {
             <Text style={styles.sectionHeader}>Food</Text>
           </View>
           <View>
-            <View style={styles.sectionCard}>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Nasi Goreng Coffee</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
+            {[...Array(2)].map((_i, idx) => (
+              <View style={styles.sectionCard}>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("details")}
+                  style={styles.card}
+                >
+                  <View style={styles.cardImage} />
+                  <View style={styles.cardText}>
+                    <Text style={styles.productName}>Nasi Goreng</Text>
+                    <Text style={styles.productPrice}>IDR 27.000</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("details")}
+                  style={styles.card}
+                >
+                  <View style={styles.cardImage} />
+                  <View style={styles.cardText}>
+                    <Text style={styles.productName}>Nasi Goreng</Text>
+                    <Text style={styles.productPrice}>IDR 27.000</Text>
+                  </View>
+                </TouchableOpacity>
               </View>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Nasi Goreng Coffee</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.sectionCard}>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Nasi Goreng Coffee</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
-              </View>
-              <View style={styles.card}>
-                <View style={styles.cardImage} />
-                <View style={styles.cardText}>
-                  <Text style={styles.productName}>Nasi Goreng Coffee</Text>
-                  <Text style={styles.productPrice}>IDR 27.000</Text>
-                </View>
-              </View>
-            </View>
+            ))}
           </View>
         </View>
       </ScrollView>

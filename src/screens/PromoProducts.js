@@ -21,7 +21,10 @@ export default class PromoProducts extends Component {
         <View>
           {[...Array(8)].map((_i, idx) => (
             <View style={styles.sectionCard}>
-              <View style={styles.card}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("details")}
+                style={styles.card}
+              >
                 <View style={styles.cardImage} />
                 <View style={styles.promo}>
                   <Text style={styles.promoPrice}>IDR 17.000</Text>
@@ -30,8 +33,11 @@ export default class PromoProducts extends Component {
                   <Text style={styles.productName}>Kopi Tanpa Gula</Text>
                   <Text style={styles.productPrice}>IDR 27.000</Text>
                 </View>
-              </View>
-              <View style={styles.card}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("details")}
+                style={styles.card}
+              >
                 <View style={styles.cardImage} />
                 <View style={styles.promo}>
                   <Text style={styles.promoPrice}>IDR 17.000</Text>
@@ -40,7 +46,7 @@ export default class PromoProducts extends Component {
                   <Text style={styles.productName}>Kopi Tanpa Gula</Text>
                   <Text style={styles.productPrice}>IDR 27.000</Text>
                 </View>
-              </View>
+              </TouchableOpacity>
             </View>
           ))}
         </View>
