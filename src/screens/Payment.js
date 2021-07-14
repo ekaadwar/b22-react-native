@@ -1,16 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+} from "react-native";
 // import { FaBeer } from "react-icons/fa";
 
 export default function Payment() {
   const [text, onChangeText] = React.useState(null);
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.sectionHeader}>
-        <Text style={styles.headerContent}>Payment</Text>
-      </View>
+    <ScrollView style={[styles.container, { marginTop: 80 }]}>
       <View style={{ flex: 1 }}>
         <View style={styles.sectionContent}>
           <Text style={styles.contentHeader}>Products</Text>
@@ -48,15 +52,25 @@ export default function Payment() {
           <View style={styles.card}>
             <View style={[styles.sectionCard, { alignItems: "center" }]}>
               <View>
-                <View style={[styles.methodIcon, { backgroundColor: "#F47B0A" }]}></View>
+                <View
+                  style={[styles.methodIcon, { backgroundColor: "#F47B0A" }]}
+                ></View>
               </View>
               <View>
                 <Text>Card</Text>
               </View>
             </View>
-            <View style={[styles.sectionCard, { alignItems: "center" }, styles.paymentMid]}>
+            <View
+              style={[
+                styles.sectionCard,
+                { alignItems: "center" },
+                styles.paymentMid,
+              ]}
+            >
               <View>
-                <View style={[styles.methodIcon, { backgroundColor: "#895537" }]}></View>
+                <View
+                  style={[styles.methodIcon, { backgroundColor: "#895537" }]}
+                ></View>
               </View>
               <View>
                 <Text>Bank account</Text>
@@ -64,7 +78,9 @@ export default function Payment() {
             </View>
             <View style={[styles.sectionCard, { alignItems: "center" }]}>
               <View>
-                <View style={[styles.methodIcon, { backgroundColor: "#FFBA33" }]}></View>
+                <View
+                  style={[styles.methodIcon, { backgroundColor: "#FFBA33" }]}
+                ></View>
               </View>
               <View>
                 <Text>Cash on delivery</Text>
