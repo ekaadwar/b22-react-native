@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 // import { FaBeer } from "react-icons/fa";
 
-export default function Cart() {
+export default function Cart({ navigation }) {
   return (
     <View style={[styles.container, { marginTop: 80 }]}>
       {/* <View style={styles.sectionHeader}>
@@ -67,7 +67,11 @@ export default function Cart() {
         </View>
       </View>
       <View>
-        <TouchableOpacity style={styles.buttonBrow}>
+        <TouchableOpacity
+          // onPress={() => this.props.navigation.navigate("checkout")}
+          onPress={() => navigation.navigate("checkout")}
+          style={styles.buttonBrow}
+        >
           <Text style={styles.textLightLg}>Confirn and Checkout</Text>
         </TouchableOpacity>
       </View>

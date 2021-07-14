@@ -15,6 +15,7 @@ import {
 import HomeScreen from "./src/screens/HomeScreen";
 import ProductDetails from "./src/screens/ProductDetails";
 import Cart from "./src/screens/Cart";
+import Checkout from "./src/screens/Checkout";
 import FavoriteProducts from "./src/screens/FavoriteProducts";
 import PromoProducts from "./src/screens/PromoProducts";
 
@@ -94,6 +95,15 @@ export default class App extends Component {
             name="cart"
             options={{
               title: "Cart",
+              header: Header,
+              headerTransparent: true,
+            }}
+          />
+          <Stack.Screen
+            component={Checkout}
+            name="checkout"
+            options={{
+              title: "Checkout",
               header: Header,
               headerTransparent: true,
             }}

@@ -5,10 +5,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function Checkout() {
   return (
-    <View style={styles.container}>
-      <View style={styles.sectionHeader}>
-        <Text style={styles.headerContent}>Checkout</Text>
-      </View>
+    <View style={[styles.container, { marginTop: 80 }]}>
       <View style={styles.sectionContent}>
         <Text style={styles.tittle}>Delivery</Text>
         <View style={styles.subSection}>
@@ -23,7 +20,9 @@ export default function Checkout() {
               <Text style={{ fontSize: 17 }}>Iskandar Street</Text>
             </View>
             <View style={styles.cardSection}>
-              <Text>Km 5 refinery road oppsite re public road, effurun, Jakarta</Text>
+              <Text>
+                Km 5 refinery road oppsite re public road, effurun, Jakarta
+              </Text>
             </View>
             <Text>+62 81348287878</Text>
           </View>
