@@ -21,7 +21,17 @@ const Header = ({ navigation, scene }) => {
         />
       </TouchableOpacity>
 
-      {page !== "details" && <Text style={headerStyles.title}>{title}</Text>}
+      {/* {page !== "details" || page !== "profile" ? (
+        <Text style={headerStyles.title}>{title}</Text>
+      ) : (
+        <View />
+      )} */}
+      {/* {page !== "profile" && <Text style={headerStyles.title}>{title}</Text>} */}
+      {page !== "details" && (
+        <Text style={headerStyles.title}>
+          {page !== "profile" && { title }}
+        </Text>
+      )}
 
       {page === "details" ? (
         <TouchableOpacity onPress={() => navigation.navigate("cart")}>

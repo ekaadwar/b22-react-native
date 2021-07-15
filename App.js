@@ -13,6 +13,7 @@ import Checkout from "./src/screens/Checkout";
 import Payment from "./src/screens/Payment";
 import FavoriteProducts from "./src/screens/FavoriteProducts";
 import PromoProducts from "./src/screens/PromoProducts";
+import Profile from "./src/screens/Profile";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,15 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            component={Profile}
+            name="profile"
+            options={{
+              title: "My Profile",
+              header: Header,
+              headerTransparent: true,
+            }}
+          />
           <Stack.Screen
             component={HomeScreen}
             name="home"
