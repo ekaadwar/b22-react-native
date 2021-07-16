@@ -14,7 +14,11 @@ import IconFeather from "react-native-vector-icons/Feather";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 export default function ProfileEdit() {
-  const [text, onChangeText] = React.useState(null);
+  const [name, onChangeName] = React.useState(null);
+  const [email, onChangeEmail] = React.useState(null);
+  const [birth, onChangeBirth] = React.useState(null);
+  const [phone, onChangePhone] = React.useState(null);
+  const [delivery, onChangeDelivery] = React.useState(null);
   return (
     <ScrollView style={[MyStyles.canvas, MyStyles.container]}>
       <View style={{ marginVertical: 50, alignItems: "center" }}>
@@ -30,8 +34,8 @@ export default function ProfileEdit() {
         <Text style={styles.labelInput}>Name:</Text>
         <TextInput
           style={LineSection(0)}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeName}
+          value={name}
           placeholderTextColor="#000"
           placeholder="Christiano Ronaldo"
         />
@@ -60,8 +64,8 @@ export default function ProfileEdit() {
         <Text style={styles.labelInput}>Email Address:</Text>
         <TextInput
           style={LineSection(0)}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeEmail}
+          value={email}
           placeholderTextColor="#000"
           placeholder="cronaldo7@juventus.com"
         />
@@ -70,8 +74,8 @@ export default function ProfileEdit() {
         <Text style={styles.labelInput}>Phone Number:</Text>
         <TextInput
           style={LineSection(0)}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangePhone}
+          value={phone}
           placeholderTextColor="#000"
           placeholder="+62 82176230964"
         />
@@ -80,8 +84,8 @@ export default function ProfileEdit() {
         <Text style={styles.labelInput}>Date of birth:</Text>
         <TextInput
           style={LineSection(0)}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeBirth}
+          value={birth}
           placeholderTextColor="#000"
           placeholder="September 27th 1990"
         />
@@ -90,8 +94,8 @@ export default function ProfileEdit() {
         <Text style={styles.labelInput}>Delivery address:</Text>
         <TextInput
           style={LineSection(0)}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeDelivery}
+          value={delivery}
           placeholderTextColor="#000"
           placeholder="Juleha Street Block Q Number 666"
         />

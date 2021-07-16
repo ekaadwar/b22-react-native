@@ -24,13 +24,9 @@ export default class App extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            component={ProfileEdit}
-            name="profileEdit"
-            options={{
-              title: "Edit Profile",
-              header: Header,
-              headerTransparent: true,
-            }}
+            component={HomeScreen}
+            name="home"
+            options={{ title: "Dashboard" }}
           />
           <Stack.Screen
             component={Profile}
@@ -42,9 +38,13 @@ export default class App extends Component {
             }}
           />
           <Stack.Screen
-            component={HomeScreen}
-            name="home"
-            options={{ title: "Dashboard" }}
+            component={ProfileEdit}
+            name="profileEdit"
+            options={{
+              title: "Edit Profile",
+              header: Header,
+              headerTransparent: true,
+            }}
           />
           <Stack.Screen
             component={ProductDetails}

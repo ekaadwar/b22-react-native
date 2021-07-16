@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import IconFeather from "react-native-vector-icons/Feather";
 
-export default function ProductDetails() {
+export default function ProductDetails({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
@@ -26,7 +26,10 @@ export default function ProductDetails() {
 
       <View style={styles.sectionCart}>
         <Text style={styles.price}>IDR 30.0</Text>
-        <TouchableOpacity style={styles.buttonCart}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("profile")}
+          style={styles.buttonCart}
+        >
           <IconFeather name="shopping-cart" size={20} color="#362115" />
         </TouchableOpacity>
       </View>

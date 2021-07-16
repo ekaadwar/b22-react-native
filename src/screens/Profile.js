@@ -12,7 +12,7 @@ import { CircleX, LineSection, Section, Card } from "../components/Circle";
 import Icon from "react-native-vector-icons/FontAwesome";
 import MainButton from "../components/MainButton";
 
-export default function Profile() {
+export default function Profile({ navigation }) {
   const radius = 70;
   const color = "coral";
   return (
@@ -21,7 +21,7 @@ export default function Profile() {
       <View style={Section(10)}>
         <View style={[styles.subTitleBar, { marginBottom: 10 }]}>
           <Text style={MyStyles.titleSub}>Your Information</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("profileEdit")}>
             <Text style={{ color: "#6A4029" }}>edit</Text>
           </TouchableOpacity>
         </View>
