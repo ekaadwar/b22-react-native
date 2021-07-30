@@ -13,7 +13,7 @@ import { CircleX, LineSection } from "../components/Circle";
 import IconFeather from "react-native-vector-icons/Feather";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-export default function ProfileEdit() {
+export default function ProfileEdit({ navigation }) {
   const [name, onChangeName] = React.useState(null);
   const [email, onChangeEmail] = React.useState(null);
   const [birth, onChangeBirth] = React.useState(null);
@@ -101,7 +101,7 @@ export default function ProfileEdit() {
         />
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("payment")}
+        onPress={() => navigation.navigate("profile")}
         style={styles.buttonBrow}
       >
         <Text style={styles.textLightLg}>Save and Update</Text>
