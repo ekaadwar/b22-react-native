@@ -10,9 +10,12 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+
+// Icon
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import React, { Component } from "react";
+import { Provider } from "react-redux";
 
 import Header from "./src/components/Header";
 import HomeScreen from "./src/screens/HomeScreen";
@@ -33,6 +36,10 @@ import { CircleX } from "./src/components/Circle";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+const Main = () => {
+  return;
+};
 
 class MainStack extends Component {
   render() {
