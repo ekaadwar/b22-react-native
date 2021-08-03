@@ -251,6 +251,22 @@ const drawerStyle = StyleSheet.create({
   },
 });
 
+const OrderStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="order"
+        component={Cart}
+        options={{
+          title: "Cart",
+          header: Header,
+          headerTransparent: true,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -271,8 +287,8 @@ const App = () => {
           />
           <Drawer.Screen
             options={{ title: "Orders" }}
-            name="orders"
-            component={Cart}
+            name="orderstack"
+            component={OrderStack}
           />
           <Drawer.Screen
             options={{ title: "All Menu" }}
