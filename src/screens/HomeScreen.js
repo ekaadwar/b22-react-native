@@ -5,11 +5,18 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
+import { connect } from "react-redux";
+import { getItems } from "../redux/actions/items";
 
 import Icon from "react-native-vector-icons/FontAwesome";
+// import { FlatList } from "react-native-gesture-handler";
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
+  componentDidMount() {
+    this.props.getItems();
+  }
   render() {
     return (
       <ScrollView>
@@ -26,7 +33,7 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
           </View>
           <ScrollView horizontal>
-            {[...Array(20)].map((_i, idx) => (
+            {/* {[...Array(20)].map((_i, idx) => (
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate("details")}
                 style={styles.productCard}
@@ -40,7 +47,26 @@ export default class HomeScreen extends Component {
                   <Text style={styles.productPrice}>IDR 25.000</Text>
                 </View>
               </TouchableOpacity>
-            ))}
+            ))} */}
+            <FlatList
+              horizontal
+              data={this.props.items.data}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("details")}
+                  style={styles.productCard}
+                >
+                  <View style={styles.cardImage}>
+                    <Icon name="user-circle" size={40} color="yellow" />
+                  </View>
+                  <View style={styles.productText}>
+                    <Text style={styles.productName}>{item.name}</Text>
+                    <Text style={styles.productPrice}>{item.price}</Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+              keyExtractor={(item) => String(item.id)}
+            />
           </ScrollView>
         </View>
         <View style={styles.sectionScreen}>
@@ -147,3 +173,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+const mapStateToProps = (state) => ({ items: state.items });
+
+const mapDispatchToProps = { getItems };
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
